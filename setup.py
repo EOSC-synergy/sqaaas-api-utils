@@ -25,6 +25,9 @@ setup(
     author_email="orviz@ifca.unican.es",
     url="https://github.com/eosc-synergy/sqaaas-api-utils",
     keywords=["SQAaaS API"],
+    setup_requires=[
+        "requests"
+    ],
     install_requires=[
         "requests"
     ],
