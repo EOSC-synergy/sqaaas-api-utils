@@ -9,6 +9,9 @@ from setuptools import find_packages, setup
 
 NAME = "sqaaas_api_utils"
 VERSION = "1.0.0"
+REQUIRES = [
+    "requests",
+]
 
 # To install the library, run the following
 #
