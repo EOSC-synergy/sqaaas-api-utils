@@ -7,12 +7,6 @@
 
 from setuptools import find_packages, setup
 
-NAME = "sqaaas_api_utils"
-VERSION = "1.0.0"
-REQUIRES = [
-    "requests",
-]
-
 # To install the library, run the following
 #
 # python setup.py install
@@ -24,14 +18,16 @@ REQUIRES = [
 ]
 
 setup(
-    name=NAME,
-    version=VERSION,
+    name="sqaaas_api_utils",
+    version="1.0.0",
     description="SQAaaS API Utils",
     author="Pablo Orviz",
     author_email="orviz@ifca.unican.es",
     url="https://github.com/eosc-synergy/sqaaas-api-utils",
     keywords=["SQAaaS API"],
-    install_requires=REQUIRES,
+    install_requires=[
+        "requests"
+    ],
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
