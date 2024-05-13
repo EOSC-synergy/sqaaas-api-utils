@@ -6,6 +6,7 @@
 
 import logging
 import requests
+import sys
 
 
 logging.basicConfig(level=logging.DEBUG)
