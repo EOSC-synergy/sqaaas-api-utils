@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("sqaaas-step-action")
 
 
+ENDPOINT = "https://api-staging.sqaaas.eosc-synergy.eu/v1"
 TOOLING_URL = "https://raw.githubusercontent.com/EOSC-synergy/sqaaas-tooling/release/2.0.0/tooling.json"
 
 
