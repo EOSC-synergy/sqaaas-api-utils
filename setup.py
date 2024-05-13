@@ -29,7 +29,8 @@ setup(
         "requests"
     ],
     install_requires=[
-        "requests"
+        "requests",
+        "setuptools-git-versioning>=2.0,<3"
     ],
     packages=find_packages(),
     include_package_data=True,
@@ -38,6 +39,5 @@ setup(
     """,
     setuptools_git_versioning={
         "enabled": True,
-    },
-    setup_requires=["setuptools-git-versioning>=2.0,<3"],
+    }
 )
