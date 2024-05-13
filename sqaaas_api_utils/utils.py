@@ -54,7 +54,7 @@ def sqaaas_request(method, path, payload={}):
         sys.exit(_error_code)
 
 
-def run_assessment(repo, branch=None, step_tools=[]):
+def run_assessment(payload):
     pipeline_id = None
     action = "create"
     sqaaas_report_json = {}
@@ -64,7 +64,6 @@ def run_assessment(repo, branch=None, step_tools=[]):
     while keep_trying:
         logger.info(f"Performing {action} on pipeline {pipeline_id}")
         if action in ["create"]:
-            payload = json.loads(create_payload(repo, branch, step_tools))
             logging.debug("Using payload: %s" % payload)
             response = sqaaas_request("post", "pipeline/assessment", payload=payload)
             response_data = response.json()
