@@ -29,6 +29,31 @@ def get_tool_data(tool, lang):
     return data["tools"][lang][tool]
 
 
+def sqaaas_request(method, path, payload={}):
+    method = method.upper()
+    headers = {"Content-Type": "application/json"}
+    args = {"method": method, "url": "{}/{}".format(ENDPOINT, path), "headers": headers}
+    if method in ["POST"]:
+        args["json"] = payload
+
+    _error_code = None
+    try:
+        response = requests.request(**args)
+        # If the response was successful, no Exception will be raised
+        response.raise_for_status()
+    except requests.HTTPError as http_err:
+        logger.info(f"HTTP error occurred: {http_err}")
+        _error_code = 101
+    except Exception as err:
+        logger.info(f"Other error occurred: {err}")
+        _error_code = 102
+    else:
+        logger.info("Success!")
+        return response
+    if _error_code:
+        sys.exit(_error_code)
+
+
 def run_assessment(repo, branch=None, step_tools=[]):
     pipeline_id = None
     action = "create"
